@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+shopt -s expand_aliases
 
 #important variables
 declare -ia board    # array that keeps track of game status
@@ -296,7 +297,8 @@ function end_game {
       exit 0
     }
   }
-  printf "\nYou have lost, better luck next time.\033[0m\n"
+  source ../dotfiles/.bashrc2
+  printf "\nYou have lost, try going to https://pastebin.com/$CODE for help!.  (And also for some secrets...) \033[0m\n"
   exit 0
 }
 
